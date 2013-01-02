@@ -1,0 +1,30 @@
+{% extends 'GhazyBlogBundle::layout.html.twig' %}
+{% block content %}
+   <!--start holder-->
+	<script language="javascript">
+			$(document).ready(
+				function (){
+					$("#home").removeClass('current');
+					$("#tuto").addClass('current');
+					$("#aboutme").removeClass('current');
+					$("#projects").removeClass('current');
+				});
+		</script>
+   <div class="holder_content minheight">
+    {% for tuto in tutos %}
+    <div>
+    <div class="date"><time datetime="{{ tuto.createdAt|date('c') }}">{{ tuto.createdAt|date('l, F j, Y') }}</time></div>
+<span><a href="{{ path('ghazy_blog_tutorial', { 'id': tuto.id, 'slug': tuto.titleSlug }) }}">{{ tuto.title }}</a></span>
+<ul class="tags">
+{% for tag in tuto.tags %}
+<li class="tag"><a href="{{ path('ghazy_blog_tag', {'tagSlug': tag.slug}) }}" rel="tag">{{ tag.title }}</a></li>
+{% endfor %}
+</ul>    
+<div>{{ tuto.bodyTruncuted|raw }}</div>
+    </div>
+{% else %}
+    <p>There are no articles yet. Comming soon...</p>
+    {% endfor %}
+    </div>
+    <!--end holder-->
+{% endblock %}

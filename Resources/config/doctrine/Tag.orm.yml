@@ -1,0 +1,21 @@
+Ghazy\BlogBundle\Entity\Tag:
+  type: entity
+  table: tag
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      type: string
+      length: 255
+      nullable: true
+    slug:
+      type: string
+      length: 255
+      nullable: true
+  manyToMany:
+    posts:
+      targetEntity: Post
+      mappedBy: tags
+      

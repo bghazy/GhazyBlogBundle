@@ -1,0 +1,5 @@
+Ghazy\BlogBundle\Entity\Comment:
+    properties:
+        email:
+            - Email:
+                message: The email is not a valid email.

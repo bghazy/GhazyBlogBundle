@@ -1,0 +1,39 @@
+{% extends 'GhazyBlogBundle::layout.html.twig' %}
+{% block content %}
+   <!--start holder-->
+	<script language="javascript">
+			$(document).ready(
+				function (){
+					$("#home").removeClass('current');
+					$("#tuto").removeClass('current');
+					$("#aboutme").removeClass('current');
+					$("#projects").removeClass('current');
+				});
+		</script>
+<div class="holder_content minheight">
+<article><div class="date"><time datetime="{{ tuto.createdAt|date('c') }}">{{ tuto.createdAt|date('l, F j, Y') }}</time></div>
+<h3>{{ tuto.title }}</h3>
+<ul class="tags">
+<li>tags:</li>
+{% for tag in tuto.tags %}
+<li class="tag"><a href="{{ path('ghazy_blog_tag', {'tagSlug': tag.slug}) }}" rel="tag">{{ tag.title }}</a></li>
+{% endfor %}
+</ul>
+    <div>{{ tuto.body|raw }}</div>
+</article>
+<section class="comments" id="comments">
+        <section class="previous-comments">
+            <h3>Comments</h3>
+            {% include 'GhazyBlogBundle:Comment:index.html.twig' with { 'comments': comments } %}
+        </section>
+        {% for key, flash in app.session.getFlashes() %}
+    	<div class="notices">
+	 <span id="notification-text">{{ flash }}</span>
+	</div>
+	{% endfor %}
+        <h3>Add Comment</h3>
+        {% render 'GhazyBlogBundle:Comment:new' with { 'blog_id': tuto.id } %}
+    </section>
+</div>
+    <!--end holder-->
+{% endblock %}

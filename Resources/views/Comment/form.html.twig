@@ -1,0 +1,6 @@
+<form action="{{ path('ghazy_blog_comment_create', { 'blog_id' : comment.post.id } ) }}" method="post" {{ form_enctype(form) }} class="blogger">
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>

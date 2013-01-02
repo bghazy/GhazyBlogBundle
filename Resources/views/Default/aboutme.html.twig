@@ -1,0 +1,30 @@
+{% extends 'GhazyBlogBundle::layout.html.twig' %}
+{% block content %}
+   <!--start holder-->
+	<script language="javascript">
+			$(document).ready(
+				function (){
+					$("#home").removeClass('current');
+					$("#tuto").removeClass('current');
+					$("#aboutme").addClass('current');
+					$("#projects").removeClass('current');
+				});
+		</script>
+   <div class="holder_content">
+    <h2>Professional</h2>
+    <br>
+	<p>I&#8217;m Web Developer working primarily in PHP Symfony. I&#8217;m currently Confirmed Web Developer for a Tunis based Internet company with responsibility for PHP/MySQL backend and frontend development.</p>
+	<p>I like also haking python and javascript.</p>
+	<br>
+	<h2>Personal</h2>
+	<br>
+	<p>I&#8217;m 26 years old. Currently living in Tunis, I&#8217;m single, and I &#8217;m trying to enjoy my life looking for new experienes.</p>
+	<br>
+	<h2>Contact</h2>
+	<br>
+	<p>You can reach me via email at contact_at_ghazybenahmed.com</p>
+	<p>You can find my CV on <a href="http://www.doyoubuzz.com/ghazy-abdelhamid-ben-ahmed" target="_blank">doyoubuzz</a>, or you can simply download it <a href="{{ asset('uploads/cv/ghazy_ben_ahmed.pdf') }}">here</a>.</p>
+    <br>
+    </div>
+    <!--end holder-->
+{% endblock %}

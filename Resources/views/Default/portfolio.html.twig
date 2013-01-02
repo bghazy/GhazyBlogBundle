@@ -1,0 +1,17 @@
+{% extends 'GhazyBlogBundle::layout.html.twig' %}
+{% block content %}
+   <!--start holder-->
+	<script language="javascript">
+			$(document).ready(
+				function (){
+					$("#home").removeClass('current');
+					$("#tuto").removeClass('current');
+					$("#aboutme").removeClass('current');
+					$("#projects").addClass('current');
+				});
+		</script>
+   <div class="holder_content minheight">
+   
+    </div>
+    <!--end holder-->
+{% endblock %}

@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="en">  
+<head>
+<meta charset="UTF-8">
+<title>{% block title %}Ghazy Ben Ahmed - Just a web developer from Tunisia{% endblock %}</title>
+<meta name="description" content="The personal website of Ghazy Ben Ahmed: web developer from Tunisia">
+<meta name="keywords" content="web, symfony, developer, django, node.js">
+<meta name="author" content="Ghazy Ben Ahmed">
+<link rel="icon" href="{{ asset('favicon.ico')}}" type="image/x-icon"/>
+<!--[if lt IE 9]>
+ <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+<link rel="shortcut icon" href="{{ asset('favicon.gif')}}" type="image/x-icon"/> 
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/ghazyblog/css/styles.css')}}"/>
+<link type="text/css" href="{{ asset('bundles/ghazyblog/css/css3.css')}}" rel="stylesheet" />
+<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
+<script type="text/javascript" src="{{ asset('bundles/ghazyblog/js/jquery.pikachoose.js')}}"></script>
+<script type="text/javascript">
+			$(document).ready(
+				function (){
+					$("#pikame").PikaChoose();
+				});
+		</script>
+		
+
+
+    </head>
+    <body>
+	
+    <!--start container-->
+    <div id="container">
+
+    <!--start header-->
+
+    <header>
+ 
+	
+   <!--start menu-->
+
+	<nav>
+    <ul>
+    <li><a id="home" href="{{ path('ghazy_blog_homepage') }}" class="current">Home</a></li>
+    <li><a id="aboutme" href="{{ path('ghazy_blog_aboutme') }}">About Me</a></li>
+    <li><a id="tuto" href="{{ path('ghazy_blog_tutorials') }}">Articles</a></li>
+    <li><a id="projects" href="#">Portfolio</a></li>
+    </ul>
+    </nav>
+	<!--end menu-->
+
+    <!--end header-->
+	</header>
+
+
+   <!--start intro-->
+
+   <div id="intro">
+   
+   <div class="group_bannner_right">
+   <img src="{{ asset('bundles/ghazyblog/img/web-design.jpeg')}}" width="550" height="316"  alt="baner">
+   </div>
+   
+   <header class="group_bannner_left">
+   <hgroup>
+   <h1>I'm Ghazy. </h1>
+   <h2>“I code stuff. I share information. I discuss thoughts.“ 
+   </h2>
+   </hgroup>
+   </header>
+   </div>
+   <!--end intro-->
+
+   
+   <!-- start body -->
+	 {% block content %}{% endblock %}
+	<!-- end body -->
+   
+   
+    </div>
+   <!--end container-->
+   {% include 'GhazyBlogBundle::analytics.html.twig' %}
+   <!--start footer-->
+   <footer>
+   <div class="container">
+   <div id="FooterOne">
+   </div>  
+   <div id="FooterTwo"> © 2012 Ghazy Ben Ahmed <a href="http://feeds.feedburner.com/ghazybenahmed/HNjd" target="_blank"><img src="{{ asset('bundles/ghazyblog/img/feed.png')}}" alt="rss"></a></div>
+   <div id="FooterTree"> Valid html5, Developed by Symfony2</div> 
+   </div>
+   </footer> 
+   </body>
+</html>

@@ -1,0 +1,10 @@
+/* Page title */
+#header h2 {
+	color: #187086;
+}
+
+/* Page links */
+#text a:hover {
+	color: #16687d;
+}
+

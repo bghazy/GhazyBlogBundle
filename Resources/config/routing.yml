@@ -1,0 +1,26 @@
+ghazy_blog_homepage:
+    pattern:  /
+    defaults: { _controller: "GhazyBlogBundle:Default:index" }
+ghazy_blog_aboutme:
+    pattern:  /aboutme
+    defaults: { _controller: "GhazyBlogBundle:Default:aboutme" }
+ghazy_blog_tutorials:
+    pattern:  /articles
+    defaults: { _controller: "GhazyBlogBundle:Default:tutorials" }
+ghazy_blog_tutorial:
+    pattern:  /article/{slug}/{id}
+    defaults: { _controller: "GhazyBlogBundle:Default:tutorial" }
+    requirements:
+        id:  \d+
+ghazy_blog_comment_create:
+    pattern:  /comment/{blog_id}
+    defaults: { _controller: "GhazyBlogBundle:Comment:create" }
+    requirements:
+        _method:  POST
+        id: \d+
+ghazy_blog_feed:
+    pattern:  /feed
+    defaults: { _controller: "GhazyBlogBundle:Default:feed" }
+ghazy_blog_tag:
+    pattern:  /tag/{tagSlug}
+    defaults: { _controller: "GhazyBlogBundle:Default:tag" }        

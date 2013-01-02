@@ -1,0 +1,21 @@
+parameters:
+#    ghazy_blog.example.class: Ghazy\BlogBundle\Example
+
+services:
+    ghazy.blog.admin.post:
+        class: Ghazy\BlogBundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: blog, label: Post }
+        arguments: [null, Ghazy\BlogBundle\Entity\Post, "GhazyBlogBundle:PostAdmin"]
+ 
+    ghazy.blog.admin.comment:
+        class: Ghazy\BlogBundle\Admin\CommentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: blog, label: Comments }
+        arguments: [null, Ghazy\BlogBundle\Entity\Comment, "GhazyBlogBundle:CommentAdmin"]
+
+    ghazy.blog.admin.tag:
+        class: Ghazy\BlogBundle\Admin\TagAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: blog, label: Tags }
+        arguments: [null, Ghazy\BlogBundle\Entity\Tag, "GhazyBlogBundle:TagAdmin"]

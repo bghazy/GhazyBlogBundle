@@ -1,0 +1,66 @@
+{% extends 'GhazyBlogBundle::layout.html.twig' %}
+{% block content %}
+   <!--start holder-->
+
+   <div class="holder_content">
+   
+   <section class="group1">
+   <h3>About Me</h3>
+   	<p>My name is Ghazy Ben Ahmed, I&#8217;m 26, I live in <a href="https://maps.google.com/maps?q=tunis&#038;hl=fr&#038;ie=UTF8&#038;ll=36.809285,10.17334&#038;spn=12.425359,25.356445&#038;sll=46.55886,2.834473&#038;sspn=10.681986,25.356445&#038;t=h&#038;hnear=Tunis,+M%C3%A9dina+de+Tunis,+Gouvernorat+de+Tunis,+Tunisie&#038;z=6" title="Tunis, Tunisia" target="_blank"><span>Tunis</span></a>.<br />
+I&#8217;m mostly a Web developer, but as you may suppose, I&#8217;m not a Web designer.</p>
+    <a href="{{ path('ghazy_blog_aboutme') }}"><span class="read_more">Read more...</span></a>
+
+	</section>
+	
+
+     
+   <section class="group2">
+   <h3>Articles</h3>
+   	<p>In this corner of my site, I share tutorials and help you to get your own work done.It is all open source.It is all hosted at <a href="https://github.com/bghazy">github</a>.</p>
+	<a href="{{ path('ghazy_blog_tutorials') }}"><span class="read_more">Read more ...</span></a>
+
+	</section>
+
+
+       
+   <section class="group3">
+   <h3>Portfolio</h3>
+   	<p>During my career, I have participate in developing many projects, here I&#8217;m going to list some of them.</p>
+	<a href="#"><span class="read_more">Read more...</span></a>
+
+	</section>
+
+  
+   </div>
+   <!--end holder-->
+   
+   <!--start holder-->
+
+   <div class="holder_content1">
+    <section class="group4">
+   <h3>Services</h3>
+   	<p>If your next project is in Symfony, Django or Node.js,you can write me an email, I will be glad to do it for you.</p>
+    <div class="pikachoose">
+	<ul id="pikame" >
+		<li><a href="#"><img src="{{ asset('bundles/ghazyblog/img/symfony.jpg')}}" width="500" height="250"  alt="picture"/></a><span>“Symfony: The PHP framework  of Sensio Labs.”</span></li>
+		<li><a href="#"><img src="{{ asset('bundles/ghazyblog/img/django-python.png')}}" width="500" height="250" alt="picture"/></a><span>“Django: The Phyton framework. “ </span></li>
+		<li><a href="#"><img src="{{ asset('bundles/ghazyblog/img/nodejs.png')}}" width="500" height="250" alt="picture"/></a><span>“Node.js: Enjoy runing javascript on server side. ”</span></li>
+	   </ul>
+       </div>
+
+	</section>
+
+
+       
+   <section class="group5">
+   	<p><span class="purple">1)</span><strong>Symfony</strong> is an Open Source PHP Web applications development framework. It was originally conceived by the Sensio Labs agency for the development of web sites for its own customers. Symfony was published in 2005 and today it is among the leading frameworks available for PHP development. </p>
+      	<p><span class="purple">2)</span><strong>Django</strong> is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.It is really the framework for perfectionists with deadlines as it called in its offical web site. Django is developed in 2005 and it is now the best Python framework.</p>
+   	<p><span class="purple">3)</span><strong>Node.js</strong> is a server side software system designed for writing scalable Internet applications, notably web servers. Programs are written on the server side in JavaScript, using event-driven, asynchronous I/O to minimize overhead and maximize scalability.</p>
+
+
+	</section>
+
+   
+    </div>
+    <!--end holder-->
+{% endblock %}
